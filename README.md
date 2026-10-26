@@ -9,7 +9,7 @@ Proyecto de ejemplo para comprobar la ejecución automática de pruebas unitaria
 
 ## Equipo
 
-Número de equipo pendiente de asignación.
+Equipo 02.
 
 ## Ejecución local
 
