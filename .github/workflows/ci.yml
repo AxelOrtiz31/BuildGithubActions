@@ -1,11 +1,11 @@
-name: Python CI
+name: CI Pipeline
 
 on:
   push:
   workflow_dispatch:
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Descargar repositorio
@@ -17,8 +17,26 @@ jobs:
           python-version: "3.12"
           cache: pip
 
-      - name: Instalar pytest
-        run: python -m pip install -r requirements.txt
+      - name: Instalar dependencias
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
 
       - name: Ejecutar pruebas
         run: python -m pytest -v
+
+      - name: Build proyecto
+        run: |
+          mkdir artefactos
+          cp calculadora.py artefactos/
+
+      - name: Generar ZIP
+        run: |
+          cd artefactos
+          zip -r ../artefacto.zip .
+
+      - name: Subir artefacto
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-python
+          path: artefacto.zip
