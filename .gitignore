@@ -1,5 +1,17 @@
+
+# Archivos temporales de Visual Studio
+.vs/
+**/.vs/
+
+# Archivos temporales de Python
 __pycache__/
-.pytest_cache/
 *.py[cod]
-.venv/
+.pytest_cache/
+
+# Entornos virtuales
 venv/
+.venv/
+
+# Archivos generados por el pipeline
+artefactos/
+artefacto.zip
