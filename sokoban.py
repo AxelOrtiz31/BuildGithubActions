@@ -10,7 +10,7 @@ def mover_personaje(mapa, movimiento):
 # Comentario random
 
     movimientos = {
-        "a": 1,
+        "a": -1,
         "d": 1
     }
 
