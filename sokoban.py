@@ -7,6 +7,8 @@ def mover_personaje(mapa, movimiento):
     nuevo_mapa = mapa.copy()
     posicion = nuevo_mapa.index(0)
 
+# Comentario random
+
     movimientos = {
         "a": 1,
         "d": 1
